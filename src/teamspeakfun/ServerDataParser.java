@@ -56,7 +56,8 @@ public class ServerDataParser {
             int pid = Integer.parseInt(stringData[1].replace("pid=", ""));
             int channel_order = Integer.parseInt(stringData[2].replace("channel_order=", ""));
             String channel_name = stringData[3].replace("channel_name=", "").replace("\\s", " ");
-            TeamspeakFun.database.addChannel(new Channel(cid, pid, channel_order, channel_name));
+            int total_clients = Integer.parseInt(stringData[5].replace("total_clients=", ""));
+            TeamspeakFun.database.addChannel(new Channel(cid, pid, channel_order, channel_name, total_clients));
         }
  
     }

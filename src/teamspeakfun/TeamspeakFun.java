@@ -22,10 +22,10 @@ public class TeamspeakFun {
         UserDisco effect = new UserDisco(database.getCldbids(), sdp);
         BulkChannelRename bulk = new BulkChannelRename(database.getChannels(), sdp);
         
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 10; i++) {
             effect.does();
             bulk.does();
-            Thread.sleep(400);
+            Thread.sleep(100);
         }
         effect.undoes();
         bulk.undoes();
